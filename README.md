@@ -119,3 +119,179 @@ Catches any input that isn’t "yes" or "no", asking the user to enter valid opt
 print("\nThanks for playing the Number Guessing Game. Goodbye!"):
 Displays a farewell message, thanking the user for playing after they either guessed correctly or chose not to play.
 
+# Notes On What Each Line Does in Friday Project 4
+trivia_questions = { ... }:
+Defines a dictionary where the keys are trivia questions and the values are their corresponding correct answers.
+
+print("Welcome to the Trivia Quiz Game!"):
+Displays a welcome message to the user, explaining the purpose of the program.
+
+for question, correct_answer in trivia_questions.items()::
+A for loop that iterates through the dictionary. question holds the question (key) and correct_answer holds the correct answer (value).
+
+user_answer = input(question + " "):
+Displays each question to the user and captures their response using the input() function.
+
+if user_answer.strip().lower() == correct_answer.lower()::
+Checks if the user's answer (after stripping any extra spaces and converting it to lowercase) matches the correct answer (also converted to lowercase). This makes the comparison case-insensitive.
+
+print("Correct!\n"):
+If the user's answer matches the correct answer, it prints "Correct!" and moves to the next question.
+
+print(f"Incorrect! The correct answer is: {correct_answer}\n"):
+If the user's answer is incorrect, it displays the correct answer to the user.
+
+print("Thanks for playing! Hope you learned something new."):
+Displays a farewell message to the user after all questions have been asked. 
+
+# Notes on What Each Line of Code Does in Friday Project 5:
+def redText(text)::
+Defines a function that takes text as input and formats it in red using ANSI escape codes. \033[31m sets the color to red, and \033[0m resets it to the default color.
+
+def blueText(text)::
+Defines a function that formats text in blue. The ANSI escape code \033[34m is used to set the color to blue.
+
+def greenText(text)::
+Defines a function that formats text in green using the ANSI code \033[32m.
+
+def yellowText(text)::
+Defines a function that formats text in yellow using \033[33m.
+
+def brownText(text)::
+Defines a function that formats text in brown using an extended ANSI code \033[38;5;94m (brown is often represented as dark yellow in terminal color schemes).
+
+def main()::
+Main program logic to demonstrate the color functions and handle user input.
+
+print(redText("This is red text!")):
+Calls the redText() function and prints the text in red. Similarly, the other print() statements demonstrate other colors.
+
+color_choice = input("Enter your color choice: ").lower():
+Asks the user to input a color choice. The .lower() method ensures the input is in lowercase for easier comparison.
+
+user_text = input("Enter the text you want to display in that color: "):
+Asks the user for the text they want to display.
+
+if color_choice == "red"::
+Checks the user's color choice and calls the corresponding function to display the text in that color.
+
+else::
+If the user enters an invalid color, the program prints an error message.
+
+# Notes On What Each Line Does in Friday Project 6:
+class BankAccount::
+Defines a class called BankAccount to encapsulate bank account functionality.
+
+def __init__(self, account_number)::
+Initializes a new instance of the BankAccount class, taking an account number as a parameter.
+
+self.account_number = account_number:
+Assigns the provided account number to the instance variable account_number.
+
+self.balance = 0:
+Initializes the balance attribute to 0 when a new bank account is created.
+
+def deposit(self, amount)::
+Defines a method to deposit money into the account.
+
+if amount > 0::
+Checks if the deposit amount is positive.
+
+self.balance += amount:
+Increases the balance by the deposited amount.
+
+print(f"Deposited ${amount}. New balance is ${self.balance}."):
+Prints a confirmation message showing the deposited amount and the new balance.
+
+else::
+Handles the case where the deposit amount is not positive.
+
+print("Deposit amount must be positive!"):
+Informs the user that the deposit amount must be positive.
+
+def withdraw(self, amount)::
+Defines a method to withdraw money from the account.
+
+if 0 < amount <= self.balance::
+Checks if the withdrawal amount is valid (positive and not greater than the balance).
+
+self.balance -= amount:
+Decreases the balance by the withdrawn amount.
+
+print(f"Withdrew ${amount}. New balance is ${self.balance}."):
+Prints a confirmation message showing the withdrawn amount and the new balance.
+
+else::
+Handles the case where the withdrawal amount is invalid.
+
+print("Insufficient funds or invalid withdrawal amount!"):
+Informs the user that the withdrawal is not possible due to insufficient funds or invalid amount.
+
+def check_balance(self)::
+Defines a method to return the current balance of the account.
+
+return self.balance:
+Returns the current balance.
+
+account = BankAccount("123456789"):
+Creates an instance of the BankAccount class with a sample account number.
+
+while True::
+Starts an indefinite loop for user interaction.
+
+account_number_input = input("Please enter your account number (or 'exit' to quit): "):
+Prompts the user to enter their account number or exit.
+
+if account_number_input.lower() == "exit"::
+Checks if the user wants to exit the program.
+
+print("Thank you for using the banking system. Goodbye!"):
+Displays a farewell message when the user decides to exit.
+
+if account_number_input == account.account_number::
+Verifies if the entered account number matches the account's number.
+
+print("Options:"):
+Displays available options for the user to choose from.
+
+option = input("Choose an option (a/b/c): ").lower():
+Prompts the user to select an option and converts the input to lowercase for easier comparison.
+
+if option == 'a'::
+Checks if the user chose to deposit money.
+
+amount = float(input("Enter the amount to deposit: ")):
+Prompts the user to enter the deposit amount and converts it to a float.
+
+account.deposit(amount):
+Calls the deposit method on the account instance to deposit the specified amount.
+
+elif option == 'b'::
+Checks if the user chose to withdraw money.
+
+amount = float(input("Enter the amount to withdraw: ")):
+Prompts the user to enter the withdrawal amount and converts it to a float.
+
+account.withdraw(amount):
+Calls the withdraw method on the account instance to withdraw the specified amount.
+
+elif option == 'c'::
+Checks if the user chose to check their balance.
+
+balance = account.check_balance():
+Calls the check balance method on the account instance and stores the balance.
+
+print(f"Your current balance is: ${balance}."):
+Displays the user's current balance.
+
+else::
+Handles the case where the user entered an invalid option.
+
+print("Invalid option. Please try again."):
+Informs the user that their choice was invalid.
+
+else: (for account number check):
+Handles the case where the account number entered does not match.
+
+print("Account number does not match. Please try again."):
+Informs the user that the account number entered is incorrect.
