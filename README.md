@@ -70,3 +70,52 @@ This prints the generated PowerBall numbers in the specified format, with one sp
 print("\nGood luck! Thank you for using the PowerBall Lottery Number Generator."):
 Displays a farewell message to the user, wishing them good luck and thanking them for using the program.
 
+# Notes On What Each Line of Code Does in Friday Project 3:
+import random:
+Imports the random module, which allows us to use randint to generate a random number.
+
+print("Welcome to the Number Guessing Game!"):
+Displays a greeting message, welcoming the user to the game.
+
+play_game = input("Do you want to play the game? (yes/no): ").lower():
+Asks the user if they want to play the game. The lower() method converts their input to lowercase to handle cases where the user types "Yes" or "YES", etc.
+
+if play_game == 'no'::
+Checks if the user enters "no" and proceeds with the condition to quit the game.
+
+print("Maybe next time!"):
+Displays a message telling the user that they can play another time if they chose not to play.
+
+elif play_game == 'yes'::
+Checks if the user enters "yes" and proceeds with starting the game.
+
+secret_number = random.randint(1, 10):
+Generates a random secret number between 1 and 10 that the user will try to guess. It’s stored in the variable secret_number.
+
+user_guess = None:
+Initializes user_guess to None to ensure the loop starts. This will store the user’s guesses.
+
+while user_guess != secret_number::
+Starts a loop that continues until the user guesses the correct number.
+
+user_guess = int(input("Guess a number between 1 and 10: ")):
+Prompts the user to enter a number between 1 and 10, converting their input to an integer.
+
+if user_guess == secret_number::
+Checks if the user's guess matches the randomly generated secret number.
+
+print("Congratulations! You've guessed the number!"):
+If the guess is correct, this message congratulates the user.
+
+else::
+If the guess is incorrect, the program will proceed to the next block of code.
+
+print("Try again!"):
+Informs the user that their guess was wrong and asks them to try again.
+
+else: (outside the if-elif block):
+Catches any input that isn’t "yes" or "no", asking the user to enter valid options.
+
+print("\nThanks for playing the Number Guessing Game. Goodbye!"):
+Displays a farewell message, thanking the user for playing after they either guessed correctly or chose not to play.
+
