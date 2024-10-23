@@ -35,3 +35,38 @@ Prints a message indicating that the Mad Lib story is about to be displayed.
 
 print(mad_lib_story):
 Outputs the completed Mad Lib story, using the user's inputs in place of the placeholders.
+
+# Notes on What Each Line of Code Does in Friday Project 2:
+import random:
+Imports the random module, which contains the randint function used to generate random numbers.
+
+print("Welcome to the PowerBall Lottery Number Generator!"):
+Displays a greeting message to welcome the user and explain the program’s purpose.
+
+print("This program will generate 6 random numbers for your PowerBall ticket."):
+Further explains to the user that the program will generate random numbers for their PowerBall ticket.
+
+white_ball_1 = random.randint(1, 69):
+Generates the first random number between 1 and 69 (for the white ball) and stores it in the variable white_ball_1.
+
+white_ball_2 = random.randint(1, 69):
+Generates the second random number between 1 and 69 (for the white ball) and stores it in the variable white_ball_2.
+
+white_ball_3 = random.randint(1, 69):
+Generates the third random number between 1 and 69 (for the white ball) and stores it in the variable white_ball_3.
+
+white_ball_4 = random.randint(1, 69):
+Generates the fourth random number between 1 and 69 (for the white ball) and stores it in the variable white_ball_4.
+
+white_ball_5 = random.randint(1, 69):
+Generates the fifth random number between 1 and 69 (for the white ball) and stores it in the variable white_ball_5.
+
+red_ball = random.randint(1, 26):
+Generates a random number between 1 and 26 for the red ball and stores it in the variable red_ball.
+
+print(f"\nYour PowerBall numbers are: {white_ball_1} {white_ball_2} {white_ball_3} {white_ball_4} {white_ball_5} {red_ball}"):
+This prints the generated PowerBall numbers in the specified format, with one space between the first five white balls and three spaces between the last white ball and the red ball.
+
+print("\nGood luck! Thank you for using the PowerBall Lottery Number Generator."):
+Displays a farewell message to the user, wishing them good luck and thanking them for using the program.
+
